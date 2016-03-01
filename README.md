@@ -6,6 +6,11 @@ Este es un proyecto didactico que en modo gráfico (gráfica de cantidad de zorr
 Las implementaciones actuales son:
 
 * a) La forma habitual.
+ * Se grafican las cantidades poblacionales de ambas especies (cazadores y presas) en cada instante de tiempo
 * b) Sobre un retículo de dos dimensiones.
   * En cada celda puede haber N zorros y M conejos, habitualmente N=0 o M=0, en caso contrario, los zorros se comen a los conejos (a partes iguales). En cada instante de tiempo discreto, los zorros y los conejos pueden dar un pasito al azar (moverse a una celda vecina). Hay que graficar el retículo y la posición de zorros y conejos
-* c) Igual que b), pero las estrategias de movimiento de zorros y conejos se hacen evolutivas (usando máquinas de estado; entradas=lo que hay en las casillas vecinas; salida=movimiento). Cada animal es un cromosoma. Los conejos se reproducen cada T1 periodos. Los zorros se reproducen por clonaje+mutación cada vez que comen conejos (un conejo les permite generar un hijo parecido al padre). 
+* c) Igual que b), 
+ * Pero las estrategias de movimiento de zorros y conejos se hacen evolutivas (usando máquinas de estado; entradas=lo que hay en las casillas vecinas; salida=movimiento). Cada animal es un cromosoma. Los conejos se reproducen cada T1 periodos. Los zorros se reproducen por clonaje+mutación cada vez que comen conejos (un conejo les permite generar un hijo parecido al padre). 
+
+
+Este es un proyecto didactico para 750115M VIDA ARTIFICIAL 2015-II
