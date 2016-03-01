@@ -13,4 +13,4 @@ Las implementaciones actuales son:
  * Pero las estrategias de movimiento de zorros y conejos se hacen evolutivas (usando máquinas de estado; entradas=lo que hay en las casillas vecinas; salida=movimiento). Cada animal es un cromosoma. Los conejos se reproducen cada T1 periodos. Los zorros se reproducen por clonaje+mutación cada vez que comen conejos (un conejo les permite generar un hijo parecido al padre). 
 
 
-Este es un proyecto didactico para 750115M VIDA ARTIFICIAL 2015-II
+Este es un proyecto didactico para 750115M VIDA ARTIFICIAL 2015-II, Universidad del valle
