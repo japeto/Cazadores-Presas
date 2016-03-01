@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Lotka-Volterra</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" >
+    <link rel="stylesheet" href="css/bootstrap-theme.css">    
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div class="container">
+      <h3>Lotka Volterra<br>Algorithmic Simulation</h3>
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <span class="glyphicon glyphicon-camera"></span>  
+          Simulacion
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class=" col-md-4">
+              <div class="panel panel-default">
+                <div class="panel-heading"> <span class="glyphicon glyphicon-wrench"></span> Configuraci&oacute;n</div>
+                <div class="panel-body">
+                  <div class="center">
+                    <h3 class="text-primary">Cazadores</h3>
+                    <div class="input-group"> 
+                     <span class="input-group-btn"> 
+                        <button type="button" class="btn btn-default btn-number btn-xs" id="btnpredatorsmin" data-type="minus" >
+                          <span class="glyphicon glyphicon-minus"></span> 
+                        </button> 
+                      </span> 
+
+                      <input class="form-control input-number input-sm" id="numPredators" type="number" min="0" value="10">
+
+                      <span class="input-group-btn"> 
+                        <button type="button" class="btn btn-default btn-number btn-xs" id="btnpredatorsplus" data-type="plus" > 
+                          <span class="glyphicon glyphicon-plus"></span> 
+                        </button> 
+                      </span> 
+                    </div>  
+                  </div>
+
+                    <h5>Tasas de crecimiento y muerte</h5>
+                    <div class="input-group well"> 
+                     <span class="input-group-btn"> 
+                        <button type="button" class="btn btn-default btn-number btn-xs" id="rategrowthmin" data-type="minus" >
+                          <span class="glyphicon glyphicon-minus"></span> 
+                        </button> 
+                      </span> 
+
+                      <input class="form-control input-number input-sm" id="ratepredatorgrowth" type="number" min="0" step="0.01"  value="0.08">
+
+                      <span class="input-group-btn"> 
+                        <button type="button" class="btn btn-default btn-number btn-xs" id="rategrowthplus" data-type="plus" > 
+                          <span class="glyphicon glyphicon-plus"></span> 
+                        </button> 
+                      </span> 
+                     <span class="input-group-btn"> 
+                        <button type="button" class="btn btn-default btn-number btn-xs" id="ratedeathmin" data-type="minus" >
+                          <span class="glyphicon glyphicon-minus"></span> 
+                        </button> 
+                      </span> 
+
+                      <input class="form-control input-number input-sm" id="ratepredatordeath" type="number" min="0" step="0.01"  value="0.5">
+
+                      <span class="input-group-btn"> 
+                        <button type="button" class="btn btn-default btn-number btn-xs" id="ratedeathplus" data-type="plus" > 
+                          <span class="glyphicon glyphicon-plus"></span> 
+                        </button> 
+                      </span>                       
+                    </div>  
+                    <hr/>
+                    <h3 class="text-danger">Presas</h3>
+                    <div class="input-group"> 
+                     <span class="input-group-btn"> 
+                        <button type="button" class="btn btn-default btn-number btn-xs" id="btnpreymin" data-type="minus">
+                          <span class="glyphicon glyphicon-minus"></span> 
+                        </button> 
+                      </span> 
+
+                      <input class="form-control input-number input-sm" id="numPrey" type="number" min="1" value="100">
+
+                      <span class="input-group-btn"> 
+                        <button type="button" class="btn btn-default btn-number btn-xs" id="btnpreyplus" data-type="plus"> 
+                          <span class="glyphicon glyphicon-plus"></span> 
+                        </button> 
+                      </span> 
+                    </div>
+                    <h5>Tasas de crecimiento y muerte</h5>
+                    <div class="input-group well"> 
+                     <span class="input-group-btn"> 
+                        <button type="button" class="btn btn-default btn-number btn-xs" id="ratepreygrowthmin" data-type="minus" >
+                          <span class="glyphicon glyphicon-minus"></span> 
+                        </button> 
+                      </span> 
+
+                      <input class="form-control input-number input-sm" id="ratepreygrowth" type="number" min="0" step="0.01"  value="1">
+
+                      <span class="input-group-btn"> 
+                        <button type="button" class="btn btn-default btn-number btn-xs" id="ratepreygrowthplus" data-type="plus" > 
+                          <span class="glyphicon glyphicon-plus"></span> 
+                        </button> 
+                      </span> 
+                     <span class="input-group-btn"> 
+                        <button type="button" class="btn btn-default btn-number btn-xs" id="ratepreydeathmin" data-type="minus" >
+                          <span class="glyphicon glyphicon-minus"></span> 
+                        </button> 
+                      </span> 
+
+                      <input class="form-control input-number input-sm" id="ratepreydeath" type="number" min="0"  step="0.01"  value="0.2">
+
+                      <span class="input-group-btn"> 
+                        <button type="button" class="btn btn-default btn-number btn-xs" id="ratepreydeathplus" data-type="plus" > 
+                          <span class="glyphicon glyphicon-plus"></span> 
+                        </button> 
+                      </span>                       
+                    </div>
+                  <hr>
+                  <div>
+
+                  <ul class="list-group">
+                    <li class="list-group-item">
+                        Reticulo 2D 
+                        <div class="material-switch pull-right">
+                            <input name="chkret2d" id="chkret2d" type="checkbox" checked/>
+                            <label for="chkret2d" class="label-warning"></label>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        Grafica Simple
+                        <div class="material-switch pull-right">
+                            <input name="chksimple" id="chksimple" type="checkbox"/>
+                            <label for="chksimple" class="label-info"></label>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        Grafica Simple con cantidades
+                        <div class="material-switch pull-right">
+                            <input  name="chksimpleplus" id="chksimpleplus" type="checkbox"/>
+                            <label for="chksimpleplus" class="label-danger"></label>
+                        </div>
+                    </li>
+                </ul>
+                  </div>
+                  <div>
+                    <center>                  
+                    <button id="startbutton" class="btn btn-primary btn-block"  type="button"> Simular </button>
+                    <!-- <button id="stopbutton" class="btn btn-danger"  type="button"> Pausar </button> -->
+                    </center>                    
+                  </div>
+
+              </div>
+            </div>
+
+            </div>
+            <div class="col-md-8">
+              <div>
+                 <canvas id="arealienzo" height="400" width="800" style='width:100%;border:2px solid red;'>
+                  Note: Necesitas HTML5 para correr esta aplicacion
+                 </canvas>
+                <canvas id="areacantidades" height="300" width="800" style='width:100%;border:2px solid red;'>
+                  Note: Necesitas HTML5 para correr esta aplicacion   
+                </canvas>
+                <canvas id="areadraw" height="500" width="800" style='width:100%;border:2px solid red;'>
+                  Note: Necesitas HTML5 para correr esta aplicacion   
+                </canvas>
+              </div>
+              <p align="left">Andres Obando & Jefferson Amado Peña  & Mayerly Suarez --- 26/02/2016</p>
+           </div>           
+      </div>  
+    </div>   
+    <script src='js/jquery.min.js'></script>
+    <script src="js/bootstrap.min.js" ></script>    
+    <script src="js/buttons.js" ></script>    
+    <script src="js/regular.js" ></script> 
+    <script src="js/reticula.js"></script>   
+  </body>
+</html>
